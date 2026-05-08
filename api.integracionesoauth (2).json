@@ -1,0 +1,412 @@
+{
+  "info": {
+    "name": "api.integracionesoauth",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "ping",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{BASE_URL}}/base/ping",
+          "protocol": "",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "base",
+            "ping"
+          ],
+          "query": [],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "protected",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "{{Auth4Token}}",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "{{BASE_URL}}/base/protected",
+          "protocol": "",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "base",
+            "protected"
+          ],
+          "query": [],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "oauth",
+      "item": [
+        {
+          "name": "autorizar",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "{{Auth4Token}}",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "{{BASE_URL}}/oauth/:provider/autorizar?userId=1",
+              "protocol": "",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "oauth",
+                ":provider",
+                "autorizar?userId=1"
+              ],
+              "query": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "provider",
+                  "value": "google"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "callback",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{BASE_URL}}/oauth/:provider/callback",
+              "protocol": "",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "oauth",
+                ":provider",
+                "callback"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "provider",
+                  "value": "google"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "desconectar",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "{{Auth4Token}}",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "{{BASE_URL}}/oauth/:provider/desconectar?userId=1",
+              "protocol": "",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "oauth",
+                ":provider",
+                "desconectar?userId=1"
+              ],
+              "query": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "provider",
+                  "value": "google"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "estado",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "{{Auth4Token}}",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "{{BASE_URL}}/oauth/:provider/estado?userId=1",
+              "protocol": "",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "oauth",
+                ":provider",
+                "estado?userId=1"
+              ],
+              "query": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "provider",
+                  "value": "google"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "proveedores",
+      "item": [
+        {
+          "name": "proveedor",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{BASE_URL}}/proveedores/:name",
+              "protocol": "",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "proveedores",
+                ":name"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "name",
+                  "value": "google"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "proveedores",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{BASE_URL}}/proveedores",
+              "protocol": "",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "proveedores"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "get-access-token",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{BASE_AUTH4}}/connect/token",
+              "protocol": "",
+              "host": [
+                "{{BASE_AUTH4}}"
+              ],
+              "path": [
+                "connect",
+                "token"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_id",
+                  "value": "BA.ApiIntegracionesOAuth.Swagger",
+                  "disabled": false,
+                  "type": "default"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "{{CLIENT_SECRET}}",
+                  "disabled": false,
+                  "type": "default"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "disabled": false,
+                  "type": "default"
+                },
+                {
+                  "key": "scope",
+                  "value": "BA.ApiIntegracionesOAuth.f",
+                  "disabled": false,
+                  "type": "default"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {},
+                "exec": [
+                  "const response = res.getBody();",
+                  "bru.setEnvVar('Auth4Token', response.access_token);"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "token",
+      "item": [
+        {
+          "name": "token",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "{{Auth4Token}}",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "{{BASE_URL}}/interno/token/:provider?userId=2",
+              "protocol": "",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "interno",
+                "token",
+                ":provider?userId=2"
+              ],
+              "query": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "provider",
+                  "value": "google"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "BASE_URL",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "Auth4Token",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "BASE_AUTH4",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "CLIENT_SECRET",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
